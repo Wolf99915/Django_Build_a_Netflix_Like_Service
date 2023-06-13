@@ -33,6 +33,8 @@ class Video(models.Model):
     state = models.CharField(max_length=2, choices=PublishStateOption.choices, default=PublishStateOption.DRAFT)
     publish_timestamp = models.DateTimeField(auto_now_add=False, auto_now=False, blank=True, null=True)
 
+    def __str__(self):
+        return self.title
     objects = VideoManager()
 
     @property
