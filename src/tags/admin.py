@@ -1,6 +1,11 @@
+from django.contrib.contenttypes.admin import GenericTabularInline
 from django.contrib import admin
 
 from .models import TaggedItem
+
+class TaggedItemInLine(GenericTabularInline): #admin.TabularInLine
+     model = TaggedItem
+     extra = 0
 
 class TaggedItemAdmin(admin.ModelAdmin):
     
